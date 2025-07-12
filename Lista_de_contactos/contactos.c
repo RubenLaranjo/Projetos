@@ -23,7 +23,7 @@ int main(){
         {
         case 'e' :
         {
-            FILE *ficheiro = fopen("C:\\Users\\LARANJO\\Desktop\\Lista_de_contactos\\lista.csv", "a");
+            FILE *ficheiro = fopen("C:\\Users\\LARANJO\\Projetos\\Lista_de_contactos\\lista.csv", "a");
 
             if (ficheiro == NULL) {
             perror("Erro ao abrir o ficheiro\n");
@@ -69,7 +69,7 @@ int main(){
             printf("Pretende procurar atraves de nome, idade ou numero de telefone (n/i/t)\n");
             scanf(" %c",&procura);
                 
-            FILE *ficheiro = fopen("C:\\Users\\LARANJO\\Desktop\\Lista_de_contactos\\lista.csv", "r");
+            FILE *ficheiro = fopen("C:\\Users\\LARANJO\\Projetos\\Lista_de_contactos\\lista.csv", "r");
             if (ficheiro == NULL) {
                 perror("Erro ao abrir o ficheiro\n");
                 return 1;
@@ -105,13 +105,14 @@ int main(){
                         }
 
                     }
-
-                        printf("Pretende fazer outra pesquisa?\n");
-                        scanf(" %c", &loop);
-
                         if (nome_p_encont == 0){
                             printf("Não foi encontrada correspondencia para o nome: %s\n", nome_p);
                         }
+                        
+                        printf("Pretende fazer outra pesquisa?\n");
+                        scanf(" %c", &loop);
+
+
                     break;
                 }
                     
@@ -139,13 +140,14 @@ int main(){
                         }
 
                     }
+                        if (idade_p_encont == 0){
+                            printf("Não foi encontrada correspondencia para a idade: %d\n", idade_p);
+                        } 
 
                         printf("Pretende fazer outra pesquisa?\n");
                         scanf(" %c", &loop);
 
-                        if (idade_p_encont == 0){
-                            printf("Não foi encontrada correspondencia para a idade: %d\n", idade_p);
-                        }                    
+                   
                     break;                    
                 case 't' :
 
@@ -170,13 +172,14 @@ int main(){
                         }
 
                     }
+                        if (tele_p_encont == 0){
+                            printf("Não foi encontrada correspondencia para o numero de telemovel: %s\n", tele_p);
+                        }
 
                         printf("Pretende fazer outra pesquisa?\n");
                         scanf(" %c", &loop);
 
-                        if (tele_p_encont == 0){
-                            printf("Não foi encontrada correspondencia para o numero de telemovel: %s\n", tele_p);
-                        }
+
                     
                     break;                
 
